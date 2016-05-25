@@ -42,6 +42,6 @@ $p.sunset;
 $p.visibility;  
 
 
-my $temp = $p.temparature;
+my $temp = $p.temperature;
 
 say $temp;
