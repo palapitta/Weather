@@ -3,20 +3,14 @@ use Net::HTTP::GET;
 
 class Weather {
 
-my $keys = '707e2d907009ae5dfa94909f0caf11ba';
+has Str $!apikey;
 my $res;
 my $x;
 
+submethod BUILD(Str :$!apikey) { }
 
-multi method get-weather($city) {
-	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$keys&units=metric";
-	$res = Net::HTTP::GET($t);
-
-	$x = from-json $res.content;
-}
-
-multi method get-weather($city, $key){
-	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$key&units=metric";
+method get-weather($city) {
+	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$!apikey&units=metric";
 	$res = Net::HTTP::GET($t);
 
 	$x = from-json $res.content;
