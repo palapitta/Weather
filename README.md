@@ -12,12 +12,9 @@ goto https://home.openweathermap.org/users/sign_up , you can use a disposable em
 use Weather;
 my $p = Weather.new();
 
-$p.get-weather('Delhi') # call get-weather() before calling other functions,
-                        # only first letter of name should be capital letter(eg: Delhi),
-                        # works without an api key
-
-$p.get-weather('Delhi','a7uie........o9')  # call the same function with key if you have an api key,
-                                           # a7uie........o9 is an example key
+$p.get-weather('Delhi','a7uie........o9')  #call get-weather() before calling other functions,
+					   # a7uie........o9 is an example key
+					   # only first letter of name should be capital letter(eg:Delhi)
 
 $p.name;   
 $p.temperature;
