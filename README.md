@@ -32,6 +32,12 @@ $p.sunrise;
 $p.sunset;
 $p.visibility;  
 
+<<<<<<< HEAD
 my $temp = $p.temparature;
+=======
+
+my $temp = $p.temperature;
+
+>>>>>>> a3cc320d54035f10a572b6d8e5beafd3a1c29959
 say $temp;
 say $p.name;
