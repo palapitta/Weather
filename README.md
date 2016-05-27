@@ -10,13 +10,12 @@ goto https://home.openweathermap.org/users/sign_up , you can use a disposable em
 
 ```perl6
 use Weather;
-my $p = Weather.new();
+my $p = Weather.new(apikey => 'a7uie........o9'); # a7uie........o9 is an example key
 
-$p.get-weather('Delhi','a7uie........o9')  #call get-weather() before calling other functions,
-					   # a7uie........o9 is an example key
-					   # only first letter of name should be capital letter(eg:Delhi)
+$p.get-weather('Delhi'); # call get-weather() before calling other functions,
+                         # only first letter of name should be capital letter(eg: Delhi),
 
-$p.name;   
+$p.name;
 $p.temperature;
 $p.humidity;
 $p.pressure;
@@ -30,7 +29,7 @@ $p.wind-speed;
 $p.wind-direction;
 $p.sunrise;
 $p.sunset;
-$p.visibility;  
+$p.visibility;
 
 my $temp = $p.temparature;
 say $temp;
