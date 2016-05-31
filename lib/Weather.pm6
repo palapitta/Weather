@@ -10,7 +10,9 @@ my $x;
 submethod BUILD(Str :$!apikey) { }
 
 method get-weather($city) {
-	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$!apikey&units=metric";
+	my $u = trim($city);
+	my $ci = tclc($u);
+	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$ci&appid=$!apikey&units=metric";
 	$res = Net::HTTP::GET($t);
 
 	$x = from-json $res.content;
