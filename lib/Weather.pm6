@@ -18,6 +18,17 @@ method get-weather($city) {
 	$x = from-json $res.content;
 }
 
+method get-weather($city, $cc) {
+	my $u = trim($city);
+	my $ci = tclc($u);
+	my $hg = trim($cc);
+	my $c = lc($hg);
+	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$ci,$c&appid=$!apikey&units=metric";
+	$res = Net::HTTP::GET($t);
+
+	$x = from-json $res.content;
+}
+
 method weather-description() {
 		$x<weather>[0]<description>;
 }
@@ -62,8 +73,18 @@ method sunrise() {
 	 $x<sys><sunrise>;
 }
 
+method sunrise_time() {
+	my $d = $x<sys><sunrise>;
+	shell("date -d @$d");
+}
+
 method sunset() {
 	 $x<sys><sunset>;
+}
+
+method sunset_time() {
+	my $d = $x<sys><sunset>;
+	shell("date -d @$d");
 }
 
 method visibility() {

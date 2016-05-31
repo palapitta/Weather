@@ -13,7 +13,8 @@ use Weather;
 my $p = Weather.new(apikey => 'a7uie........o9'); # a7uie........o9 is an example key
 
 $p.get-weather(' delhi '); # call get-weather() before calling other functions,
- 
+$p.get-weather(' delhi', ' in');   #can pass country code
+
 $p.name;
 $p.temperature;
 $p.humidity;
@@ -29,7 +30,9 @@ $p.wind-direction;
 $p.sunrise;
 $p.sunset;
 $p.visibility;
+$p.sunrise_time; #works on linux
+$p.sunset_time; #works on linux
 
 my $temp = $p.temparature;
 say $temp;
-say $p.name;
+say $p.sunrise_time;
