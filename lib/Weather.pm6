@@ -9,7 +9,7 @@ my $x;
 
 submethod BUILD(Str :$!apikey) { }
 
-method get-weather($city) {
+multi method get-weather($city) {
 	my $u = trim($city);
 	my $ci = tclc($u);
 	my $t = "http://api.openweathermap.org/data/2.5/weather?q=$ci&appid=$!apikey&units=metric";
@@ -18,7 +18,7 @@ method get-weather($city) {
 	$x = from-json $res.content;
 }
 
-method get-weather($city, $cc) {
+multi method get-weather($city, $cc) {
 	my $u = trim($city);
 	my $ci = tclc($u);
 	my $hg = trim($cc);
