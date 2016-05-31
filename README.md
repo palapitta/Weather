@@ -35,4 +35,4 @@ $p.sunset_time; #works on linux
 
 my $temp = $p.temparature;
 say $temp;
-say $p.sunrise_time;
+$p.sunrise_time;
