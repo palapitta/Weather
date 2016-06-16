@@ -29,6 +29,7 @@ $p.wind-speed;   # in meter/sec
 $p.wind-direction;  # in degree,  north-based azimuths
 $p.sunrise;   # in local time
 $p.sunset;    # in local time
+$p.rain;   # volume in last 3 hrs
 
 my $temp = $p.temparature;
 say $temp;
