@@ -30,124 +30,64 @@ multi method get-weather($city, $cc) {
 }
 
 method weather-description() {
-	my $res =	$x<weather>[0]<description>;
-	if $x<weather>[0]<description>.WHAT.gist eq "(Any)" {
-		$res = "";
-	}
-	return $res;
+		$x<weather>[0]<description>;
 }
 
 method weather-main() {
-	 my $res = $x<weather>[0]<main>;
-	 if $x<weather>[0]<main>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	 $x<weather>[0]<main>;
 }
 
 method wind-speed() {
-	 my $res = $x<wind><speed>;
-	 if $x<wind><speed>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	 $x<wind><speed>;
 }
 
 method wind-direction() {
-	 my $res = $x<wind><deg>;
-	 if $x<wind><deg>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	 $x<wind><deg>;
 }
 
 method humidity() {
-	 my $res = $x<main><humidity>;
-	 if $x<main><humidity>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<main><humidity>;
 }
 
 method pressure() {
-	 my $res = $x<main><pressure>;
-	 if $x<main><pressure>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	 $x<main><pressure>;
 }
 
 method temperature() {
-	 my $res = $x<main><temp>;
-	 if $x<main><temp>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<main><temp>;
 }
 
 method longitude() {
-	 my $res = $x<coord><lon>;
-	 if $x<coord><lon>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<coord><lon>;
 }
 
 method latitude() {
-	 my $res = $x<coord><lat>;
-	 if $x<coord><lat>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<coord><lat>;
 }
 
 method country() {
-	 my $res = $x<sys><country>;
-	 if $x<sys><country>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<sys><country>;
 }
 
 method sunrise() {
 	my $d = $x<sys><sunrise>;
-	my $res = DateTime.new($d).local;
-	if $x<sys><sunrise>.WHAT.gist eq "(Any)" {
-		$res = "";
-	}
-	return $res;
+        DateTime.new($d).local;
 }
 
 method sunset() {
 	my $d = $x<sys><sunset>;
-	my $res = DateTime.new($d).local;
-	if $x<sys><sunset>.WHAT.gist eq "(Any)" {
-		$res = "";
-	}
-	return $res;
+	DateTime.new($d).local;
 }
 
 method cloudy() {
-	 my $res = $x<clouds><all>; # maybe cloud percentage;
-	 if $x<clouds><all>.WHAT.gist eq "(Any)" {
-		 $res = "";
-	 }
-	 return $res;
+	  $x<clouds><all>; # maybe cloud percentage;
 }
 
 method name() {
-	my $res = $x<name>;
-	if $x<name>.WHAT.gist eq "(Any)" {
-		$res = "";
-	}
-	return $res;
+	 $x<name>;
 }
 
 method rain() {
-	my $res = $x<rain>.values;
- if $x<rain>.values.WHAT.gist eq "(Any)" {
-	 $res = "";
- }
-	return $res;
+         $x<rain>.values;
 }
 }
