@@ -150,3 +150,4 @@ method rain() {
  }
 	return $res;
 }
+}
