@@ -103,7 +103,7 @@ method latitude() {
 
 method country() {
 	 my $res = $x<sys><country>;
-	 if $x<sys><country.WHAT.gist eq "(Any)" {
+	 if $x<sys><country>.WHAT.gist eq "(Any)" {
 		 $res = "";
 	 }
 	 return $res;
