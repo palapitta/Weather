@@ -62,7 +62,7 @@ method wind-direction() {
 }
 
 method humidity() {
-	 my $res = $x<main><humidity
+	 my $res = $x<main><humidity>;
 	 if $x<main><humidity>.WHAT.gist eq "(Any)" {
 		 $res = "";
 	 }
